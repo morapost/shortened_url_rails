@@ -1,0 +1,25 @@
+<h2>Requested URLs</h2>
+
+<% @urls.each do |u| %>
+	<%= u.original_url %> by <u><%= u.email%></u>
+<% end %>
+<hr>
+<p>Shared URLs</p>
+
+<table class="table-bordered">
+	<tr>
+		<th>Email</th>
+		<th>Provided URL</th>
+		<th>Shortened URL</th>
+	</tr>
+	<%- @shared_urls.each do |shared| %>
+		<tr>
+			<td><%= shared.short_url.email %></td>
+			<td><%= shared.short_url.original_url %></td>
+			<td><%= "http://localhost:3000/i/" + shared.short_url.short_url %></td>
+		</tr>
+	<% end %>	
+</table>
+	
+
+	

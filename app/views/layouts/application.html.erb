@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShortUrlApi</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<div class="container">
+      <%= render 'layouts/navbar' %> <br>
+  		<div class="alert alert-success" role="alert">
+		  <h4 class="alert-heading">How to generate shortened URL</h4>
+		  <p>Please use console in the browser to initiate ajax request to rails server</p>
+		  <hr>
+		  <p class="mb-0">
+		  	$.ajax({type: "POST",url: "/short_urls",data: {original_url: &lt Your URL in quoutes &gt, email: &lt Your Email in quotes &gt} });
+		  </p>
+		</div>
+    	<%= yield %>
+    </div>
+  </body>
+</html>
